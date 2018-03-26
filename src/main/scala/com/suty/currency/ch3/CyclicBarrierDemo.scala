@@ -10,7 +10,7 @@ class Soldier(cylic:CyclicBarrier, soldierName: String) extends Runnable {
 
   override def run(): Unit = {
     cylic.await() // 等待所有士兵到齐
-    Thread.sleep(1000)
+    Thread.sleep(15000)
     cylic.await() // 等待所有士兵完成工作
   }
 }
