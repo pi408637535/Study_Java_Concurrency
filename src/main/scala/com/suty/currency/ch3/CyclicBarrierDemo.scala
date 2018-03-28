@@ -29,14 +29,14 @@ class BarriderRun(var flag:Boolean, n:Int) extends Runnable{
 object CyclicBarrierDemo {
   def main(args: Array[String]): Unit = {
     val N:Int = 10
-    val allSoldier =  new Array[Thread](20)
+    val allSoldier =  new Array[Thread](100)
     val flag = false
 
     val cyclic = new CyclicBarrier(N, new BarriderRun(flag, N))
 
     println("集合队伍")
 
-    for(i <-  1 to N){
+    for(i <-  1 to 50){
       println("士兵 " + i + " 报道")
       allSoldier(i) = new Thread(new Soldier(cyclic, "士兵" + i ))
       allSoldier(i).start()
